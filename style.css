@@ -1,0 +1,324 @@
+/*
+  Theme for Emmanuel Kagodo’s personal website
+  Inspired by modern clean‑energy and data‑analytics aesthetics.
+*/
+
+/* CSS Variables for colour palette */
+:root {
+  --primary: #009e60; /* vibrant green */
+  --secondary: #004d40; /* deep teal */
+  --accent: #00bfa6; /* turquoise accent */
+  --bg-light: #f6faf8; /* light background */
+  --text-dark: #212121; /* base text colour */
+  --text-light: #fafafa; /* light text colour */
+}
+
+/* Reset margins and set base font */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+/* Utility container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Navigation bar */
+#header {
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.brand a {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--secondary);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  font-weight: 500;
+  color: var(--secondary);
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+/* Hero section */
+.hero {
+  position: relative;
+  height: 100vh;
+  background-image: url('images/hero.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--text-light);
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 77, 64, 0.7) 0%,
+    rgba(0, 77, 64, 0.85) 100%
+  );
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.hero .tagline {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--accent);
+  color: var(--text-light);
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--primary);
+  color: var(--text-light);
+}
+
+/* Generic section styling */
+.section {
+  padding: 4rem 0;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--secondary);
+  text-align: center;
+}
+
+/* About section */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.about-content h2 {
+  text-align: left;
+}
+
+.about-content p + p {
+  margin-top: 1rem;
+}
+
+/* Projects */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  position: relative;
+  transition: transform 0.2s ease;
+  border-left: 6px solid var(--primary);
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+}
+
+.project-number {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent);
+  opacity: 0.1;
+}
+
+.project-card p {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--secondary);
+}
+
+/* Publications */
+.pub-list {
+  list-style: none;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.pub-list li {
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+.pub-list a {
+  border-bottom: 1px solid transparent;
+}
+
+.pub-list a:hover {
+  border-color: var(--accent);
+}
+
+/* Partners */
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+.partner-item {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.partner-item:hover {
+  transform: translateY(-4px);
+}
+
+.partner-item i {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--accent);
+}
+
+.partner-item span {
+  font-weight: 500;
+  color: var(--secondary);
+  text-align: center;
+}
+
+/* Contact */
+.contact-list {
+  list-style: none;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.contact-list i {
+  font-size: 1.25rem;
+  margin-right: 0.75rem;
+  color: var(--accent);
+}
+
+.contact-list span {
+  font-weight: 600;
+  margin-right: 0.5rem;
+  color: var(--secondary);
+}
+
+/* Footer */
+.footer {
+  background-color: var(--secondary);
+  color: var(--text-light);
+  padding: 1.5rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .about-content h2 {
+    text-align: center;
+  }
+  .nav-links {
+    gap: 1rem;
+  }
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+}
