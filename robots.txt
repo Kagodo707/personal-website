@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kagodo707.github.io/personal-website/sitemap.xml
